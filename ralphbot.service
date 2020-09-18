@@ -1,0 +1,14 @@
+[Unit]
+Description=ralphbot
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u /home/djhunt/discord-ralphbot/main.py
+WorkingDirectory=/home/djhunt/discord-ralphbot
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=djhunt
+
+[Install]
+WantedBy=multi-user.target
