@@ -39,8 +39,8 @@ async def help(ctx):
     embed = discord.Embed(
         colour = discord.Colour.green())
     embed.set_author(name='Help : list of commands available')
-    embed.add_field(name='.ping', value='Returns bot respond time in milliseconds', inline=False)
-    embed.add_field(name='.ralph', value='Get a wonderful quote from RalphBot', inline=False)
+    embed.add_field(name='?ping', value='Returns bot respond time in milliseconds', inline=False)
+    embed.add_field(name='?ralph', value='Get a wonderful quote from RalphBot', inline=False)
     await ctx.send(embed=embed)
 
 
