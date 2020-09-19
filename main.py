@@ -32,6 +32,9 @@ async def test(ctx):
 async def ping(ctx):
     await ctx.send(f'Pong! {round (bot.latency * 1000)}ms ')
 
+@bot.command()
+async def wedding(ctx):
+    await ctx.send("October 10th, you stupid cunt. Check your :calendar:.")
 
 #Embeded help with list and details of commands
 @bot.command(pass_context=True)
@@ -56,7 +59,6 @@ async def ralph(ctx):
 @bot.event
 async def on_command_error(ctx, error):
     await ctx.send(f'Error. Try .help ({error})')
-
 
 # Currently disabled
 #react to any message that contains 'drama'
