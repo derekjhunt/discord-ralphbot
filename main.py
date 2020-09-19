@@ -34,7 +34,7 @@ async def ping(ctx):
 
 @bot.command()
 async def wedding(ctx):
-    await ctx.send("October 10th, you stupid cunt. Check your :calendar:.")
+    await ctx.send("October 10th, you stupid cunt. Check your :calendar:. Also, don't be cheap: https://paypal.me/pools/c/8joQUEB901")
 
 #Embeded help with list and details of commands
 @bot.command(pass_context=True)
