@@ -62,6 +62,7 @@ async def heinlein(ctx):
     response = random.choice(wikiquote.quotes('Robert A. Heinlein'))
     await ctx.send(response)
 
+
 #Answers with a random quote
 @bot.command()
 async def trump(ctx):
@@ -70,9 +71,18 @@ async def trump(ctx):
 
 #Answers with a random quote
 @bot.command()
+async def cunt(ctx):
+    list_of_cunts = ['Donald Trump', 'Adolf Hitler', 'Charles Manson']
+    cunt = random.choice(list_of_cunts)
+    response = random.choice(wikiquote.quotes(cunt))
+    await ctx.send(response)
+
+#Answers with a random quote
+@bot.command()
 async def qotd(ctx):
     response = random.choice(wikiquote.wikiquote.quote_of_the_day())
     await ctx.send(response)
+
 
 #If there is an error, it will answer with an error
 @bot.event
