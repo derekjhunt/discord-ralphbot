@@ -68,6 +68,12 @@ async def trump(ctx):
     response = random.choice(wikiquote.quotes('Donald Trump'))
     await ctx.send(response)
 
+#Answers with a random quote
+@bot.command()
+async def qotd(ctx):
+    response = random.choice(wikiquote.wikiquote.quote_of_the_day())
+    await ctx.send(response)
+
 #If there is an error, it will answer with an error
 @bot.event
 async def on_command_error(ctx, error):
