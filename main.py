@@ -3,6 +3,7 @@
 import discord
 from discord.ext import commands
 import random
+import wikiquote
 
 description = '''Ralphbot - your friendly local Ralph Wiggum.
 '''
@@ -53,6 +54,18 @@ async def ralph(ctx):
     responses = open('ralph.txt').read().splitlines()
     random.seed(a=None)
     response = random.choice(responses)
+    await ctx.send(response)
+
+#Answers with a random quote
+@bot.command()
+async def heinlein(ctx):
+    response = random.choice(wikiquote.quotes('Robert A. Heinlein'))
+    await ctx.send(response)
+
+#Answers with a random quote
+@bot.command()
+async def trump(ctx):
+    response = random.choice(wikiquote.quotes('Donald Trump'))
     await ctx.send(response)
 
 #If there is an error, it will answer with an error
