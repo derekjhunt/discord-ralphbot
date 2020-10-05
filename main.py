@@ -88,6 +88,14 @@ async def ralph(ctx):
     response = random.choice(responses)
     await ctx.send(response)
 
+#Answers with a specific quote
+@bot.command()
+async def ralphtest(ctx,arg):
+    responses = open('ralph.txt').read().splitlines()
+    response = responses[arg+1]
+    await ctx.send(response)	
+	
+
 #Answers with a random quote
 @bot.command()
 async def heinlein(ctx):
