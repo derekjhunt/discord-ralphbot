@@ -52,6 +52,6 @@
 "Plant It And You'll Grow A New Ralph."
 "I'm In Danger."
 "Hi Super Nintendo Chalmers, I'm Learneding."
-"Let's be friends." It says "bee," and there's a picture of a bee on it!"
+:bee: "Let's be friends." It says "bee," and there's a picture of a bee on it!" :bee:
 "Mr. Simpson, the tar fumes are making me dizzy!"
 "Smell ya later, Bart. Smell ya later forever."
