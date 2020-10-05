@@ -90,9 +90,9 @@ async def ralph(ctx):
 
 #Answers with a specific quote
 @bot.command()
-async def ralphtest(ctx,arg):
+async def ralphtest(ctx,line: int):
     responses = open('ralph.txt').read().splitlines()
-    response = responses[arg+1]
+    response = responses[line-1]
     await ctx.send(response)	
 	
 
