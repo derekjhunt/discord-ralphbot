@@ -123,6 +123,12 @@ async def qotd(ctx):
     response = wikiquote.quote_of_the_day()
     await ctx.send(response)
 
+#I'm a Parade!
+@bot.command()
+async def parade(ctx):
+    await ctx.send(file=discord.File('images/parade.jpg'))
+
+
 @bot.command()
 async def bunker(ctx,args):
     codes = ['Prison shack code: 72948531',
