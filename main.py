@@ -123,11 +123,21 @@ async def qotd(ctx):
     response = wikiquote.quote_of_the_day()
     await ctx.send(response)
 
+
 #I'm a Parade!
 @bot.command()
 async def parade(ctx):
     await ctx.send(file=discord.File('images/parade.jpg'))
 
+# Zoom Happy Hour Link
+@bot.command()
+async def happyhour(ctx):
+    booze = open('alcohol.txt').read().splitlines()
+    random.seed(a=None)
+    boozequote = random.choice(booze)
+    response = open('zoom.txt').read()
+    await ctx.send(response)
+    await ctx.send(boozequote)
 
 @bot.command()
 async def bunker(ctx,args):
