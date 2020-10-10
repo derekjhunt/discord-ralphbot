@@ -96,11 +96,17 @@ async def ralphtest(ctx,line: int):
     await ctx.send(response)	
 	
 
-#Answers with a random quote
+#Answers with a random Heinlein quote
 @bot.command()
 async def heinlein(ctx):
     response = random.choice(wikiquote.quotes('Robert A. Heinlein'))
     await ctx.send(response)
+
+#Answers with a random Rawles quote
+@bot.command()
+async def rawles(ctx):
+    response = random.choice(wikiquote.quotes('James Wesley Rawles'))
+    await ctx.send(response)    
 
 @bot.command()
 async def quote(ctx,arg):
