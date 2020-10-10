@@ -140,7 +140,7 @@ async def happyhour(ctx):
     await ctx.send(boozequote)
 
 @bot.command()
-async def bunker(ctx,args):
+async def bunker(ctx,*, args):
     codes = ['Prison shack code: 72948531',
              'Farmland code: 49285163',
              'South Junkyard: 97264138',
@@ -158,7 +158,8 @@ async def bunker(ctx,args):
                 'Bunker 9:  Inspect the stone houses near bunker 8. Bunker 9 should be in one of the houses just like the previous one.', 
                 'Bunker 10: Start moving towards the east of the quarry. You might spot a blocked-off tunnel with train tracks by the end of the map. Bunker 10 is located above it.'
                 ]
-    #if arg == codes:
+    if any(args in message.content.lower() for keyword in bunker):
+        await ctx.send(response)
     #response =
 
     #await ctx.send(response)
