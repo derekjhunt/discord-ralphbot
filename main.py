@@ -2,19 +2,35 @@
 
 import discord
 from discord.ext import commands
+from discord import Embed
 import random
 import wikiquote
 import aiohttp
 import json
+import requests
 import asyncio
+import logging
+
+
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
+logging.basicConfig(level=logging.INFO)
 
 description = '''Ralphbot - your friendly local Ralph Wiggum.
 '''
 bot = commands.Bot(command_prefix='?', description=description)
 
+colour = random.randint(0x000000, 0xffffff)
+
 print("Starting ralphbot...")
 
 TOKEN = open("token.txt","r").readline()
+
+WEATHER_API = open("weather_api.txt","r").readline()
+openweather_base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
 # Edit thingy
 async def edit(ctx, content=None, embed=None, ttl=None):
@@ -129,6 +145,44 @@ async def qotd(ctx):
     response = wikiquote.quote_of_the_day()
     await ctx.send(response)
 
+# Weather - for Fuzzybabyducks
+def get_weather(city):
+    try:
+        weather_base_url = "http://api.weatherapi.com/v1/current.json?key=f1011a7d81854f5fa0322209202810"
+        complete_url = weather_base_url + "&q=" + city
+        response =  requests.get(complete_url) 
+        result = response.json()
+
+        city = result['location']['name']
+        country = result['location']['country']
+        time = result['location']['localtime']
+        wcond = result['current']['condition']['text']
+        celcius = result['current']['temp_c']
+        fahrenheit = result['current']['temp_f']
+        fclike = result['current']['feelslike_c']
+        fflike = result['current']['feelslike_f']
+
+        embed=discord.Embed(title=f"{city}"' Weather', description=f"{country}", color=0x14aaeb)
+        embed.add_field(name="Temprature C°", value=f"{celcius}", inline=True)
+        embed.add_field(name="Temprature F°", value=f"{fahrenheit}", inline=True)
+        embed.add_field(name="Wind Condition", value=f"{wcond}", inline=False)
+        embed.add_field(name="Feels Like F°", value=f"{fflike}", inline=True)
+        embed.add_field(name="Feels Like C°", value=f"{fclike}", inline=True)
+        embed.set_footer(text='Time: 'f"{time}")
+        embed.set_thumbnail(url="https://i.ibb.co/CMrsxdX/weather.png")
+
+        return embed
+    except:
+        embed=discord.Embed(title="No response", color=0x14aaeb)
+        embed.add_field(name="Error", value="Oops!! Please enter a city name", inline=True)
+        return embed
+
+@bot.event
+async def on_message(message):
+    if message.content.lower().startswith("?weather"):
+            city = message.content[slice(9, len(message.content))].lower()
+            result = get_weather(city)
+            await message.channel.send(embed=result)
 
 #I'm a Parade!
 @bot.command()
