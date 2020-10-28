@@ -177,12 +177,16 @@ def get_weather(city):
         embed.add_field(name="Error", value="Oops!! Please enter a city name", inline=True)
         return embed
 
-@bot.event
-async def on_message(message):
-    if message.content.lower().startswith("?weather"):
-            city = message.content[slice(9, len(message.content))].lower()
-            result = get_weather(city)
-            await message.channel.send(embed=result)
+@bot.command()
+async def weather(ctx, arg1):
+    #arg = message.content[slice(9, len(message.content))].lower()
+    result = get_weather(arg1)
+    await ctx.send(embed=result)
+
+
+@bot.command()
+async def covid(ctx):
+    await ctx.send("https://youtu.be/tZsPAF3VUUA")
 
 #I'm a Parade!
 @bot.command()
