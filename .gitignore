@@ -1,5 +1,7 @@
 token.txt
 weather_api.txt
 zoom.txt
+praw.ini
 discord.log
 .vscode/*
+testing/*

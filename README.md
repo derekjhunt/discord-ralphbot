@@ -5,5 +5,7 @@ Code from: https://medium.com/simple-guides-to-technology/a-simple-guide-to-maki
 
 Permissions integer: 271969360
 
+praw.ini:
+https://praw.readthedocs.io/en/latest/getting_started/configuration/prawini.html
 
 Copy ralphbot.service to /etc/systemd/system
