@@ -12,7 +12,7 @@ class Heinlein(commands.Cog):
     async def heinlein(self, ctx):
         """"""
         response = random.choice(wikiquote.quotes('Robert A. Heinlein'))
-        response_a = "Robert A. Heinlein:" + response
+        response_a = "Robert A. Heinlein: " + response
         await ctx.send(response_a)
 
 def setup(bot): # this is called by Pycord to setup the cog

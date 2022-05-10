@@ -13,7 +13,7 @@ class Trump(commands.Cog):
     async def trump(self, ctx):
         """Pulls a random quote from an insane, treasonous wannabe dictator."""
         response = random.choice(wikiquote.quotes('Donald Trump'))
-        response_a = "Donald J. Trump:" + response
+        response_a = "Donald J. Trump: " + response
         await ctx.send(response_a)
 
 def setup(bot): # this is called by Pycord to setup the cog
