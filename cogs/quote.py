@@ -9,14 +9,16 @@ class Quote(commands.Cog):
 
     @commands.command() # create a command
 
-    async def quote(self, ctx,arg):
+    async def quote(self, ctx, arg):
         """Pulls a random quote from WikiQuote. Example: !quote "George Washington" """
     #    try:
         response = random.choice(wikiquote.quotes(arg))
         #except wikiquote.DisambiguationPageException as e:
         #  s = random.choice(e.options)
         #  response = wikiquote.quotes(s)
-        await ctx.send(response)
+        arg = arg.replace('"', '')
+        response_a = arg + ": " + response
+        await ctx.send(response_a)
 
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(Quote(bot)) # add the cog to the bot
