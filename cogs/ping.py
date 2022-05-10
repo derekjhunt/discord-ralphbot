@@ -9,6 +9,7 @@ class Ping(commands.Cog):
 
     #answers with the ms latency
     async def ping(self, ctx):
+        """"Shows the latency of the bot."""
         await ctx.send(f'Pong! {round (bot.latency * 1000)}ms ')
 
 def setup(bot): # this is called by Pycord to setup the cog

@@ -12,6 +12,7 @@ class DankMemes(commands.Cog):
     @commands.command() # create a command
 
     async def dankmemes(self, ctx):
+        """Pulls a random Dankmeme from /r/dankmemes"""
         memes_submissions = reddit.subreddit('dankmemes').hot()
         post_to_pick = random.randint(1, 10)
         for i in range(0, post_to_pick):

@@ -12,6 +12,7 @@ class Memes(commands.Cog):
     @commands.command() # create a command
 
     async def memes(self, ctx):
+        """Pulls a random meme from /r/memes"""
         reddit = praw.Reddit("ralphbot", user_agent='script:RalphBot:v0.0.1 by u/Azathot')
 
         memes_submissions = reddit.subreddit('memes').hot()

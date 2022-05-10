@@ -10,6 +10,7 @@ class Ralph(commands.Cog):
     @commands.command() # create a command
 
     async def ralph(self, ctx):
+        """Presents a random Ralph Wiggum quote."""
         directory_path = os.getcwd()
         responses = open(directory_path + '/ralph.txt').read().splitlines()
         random.seed(a=None)

@@ -14,6 +14,7 @@ class Weather(commands.Cog):
     @commands.command() # create a command
 
     async def weather(self, ctx, arg1):
+        """Gets weather. Pass a city or zipcode. Example: !weather 06457 """
         #arg = message.content[slice(9, len(message.content))].lower()
         result = get_weather(arg1)
         await ctx.send(embed=result)

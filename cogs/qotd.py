@@ -11,6 +11,7 @@ class Qotd(commands.Cog):
 
     # Answers with the Quote of the day
     async def qotd(self, ctx):
+        """Pulls the WikiQuote of the Day."""
         response = wikiquote.quote_of_the_day()
         await ctx.send(response)
 

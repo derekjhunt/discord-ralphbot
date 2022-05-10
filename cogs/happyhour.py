@@ -10,6 +10,7 @@ class Happyhour(commands.Cog):
     @commands.command() # create a command
 
     async def happyhour(self, ctx):
+        """Posts the classic Happy Hour with a random quote about Alcohol."""
         directory_path = os.getcwd()
         booze = open(directory_path + '/alcohol.txt').read().splitlines()
         random.seed(a=None)

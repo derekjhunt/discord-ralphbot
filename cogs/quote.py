@@ -10,6 +10,7 @@ class Quote(commands.Cog):
     @commands.command() # create a command
 
     async def quote(self, ctx,arg):
+        """Pulls a random quote from WikiQuote. Example: !quote "George Washington" """
     #    try:
         response = random.choice(wikiquote.quotes(arg))
         #except wikiquote.DisambiguationPageException as e:
