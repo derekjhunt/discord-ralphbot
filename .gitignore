@@ -5,3 +5,4 @@ praw.ini
 discord.log
 .vscode/*
 testing/*
+cogs/__pycache__/*
