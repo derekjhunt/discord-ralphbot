@@ -66,13 +66,5 @@ async def on_ready():
 async def on_command_error(ctx, error):
     await ctx.send(f'Error. Try .help ({error})')
 
-# Currently disabled
-#react to any message that contains 'drama'
-#@bot.event
-#async def on_message(ctx):
-#    if 'drama' in ctx.content:
-#        emoji = '\N{EYES}'
-#        await ctx.add_reaction(emoji)
-
 print("Bot is ready!")
 bot.run(TOKEN)
