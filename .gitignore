@@ -3,6 +3,7 @@ weather_api.txt
 zoom.txt
 praw.ini
 discord.log
+rlm/*
 .vscode/*
 testing/*
 cogs/__pycache__/*
