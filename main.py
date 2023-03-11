@@ -41,7 +41,8 @@ cogs_list = [
     'urban',
     'weather',
     'wedding',
-    'rlm'
+    'rlm',
+    'actually'
 ]
 
 for cog in cogs_list:
