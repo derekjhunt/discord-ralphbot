@@ -42,7 +42,10 @@ cogs_list = [
     'weather',
     'wedding',
     'rlm',
-    'actually'
+    'actually',
+    'your',
+    'there',
+    'its'
 ]
 
 for cog in cogs_list:
